@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 
 //1. props을 통해 컴포넌트에 값 전달하기
 // const Study = (props) => {
@@ -57,8 +57,6 @@ const {name, nickName, explanation} = inputs;
 
 const [viewContent, setViewContent] = useState([]);
 
-//ref Hook 이용 DOM에 직접 접
-const nameInput = useRef();
 
 const onChange = e => {
     const {name, value} =e.target; // e.target에서 name, value 추출
@@ -74,7 +72,6 @@ const onReset = e => {
         nickName:'',
         explanation:''
     });
-    nameInput.current.focus(); //함수 적용시 현재 nameInput DOM에 접근하여 포커스
 };
 
 const onPost = e =>{
@@ -87,7 +84,7 @@ const onPost = e =>{
   return (
     <>
     
-    <input name='name' value={name} placeholder='name' onChange={onChange} ref={nameInput}/>
+    <input name='name' value={name} placeholder='name' onChange={onChange}/>
     <input name='nickName' value={nickName} placeholder='nickName' onChange={onChange}/>
     <input name='explanation' value={explanation} placeholder='explanation' onChange={onChange}/>
     <button onClick={onReset}>Reset</button>
