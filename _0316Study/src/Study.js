@@ -57,7 +57,7 @@ const {name, nickName, explanation} = inputs;
 
 const [viewContent, setViewContent] = useState([]);
 
-//ref Hook 이용 DOM에 직접 접근
+//ref Hook 이용 DOM에 직접 접
 const nameInput = useRef();
 
 const onChange = e => {
